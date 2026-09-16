@@ -1,0 +1,67 @@
+:root {
+  /* Phase 0 placeholder tokens. The real system (felt, chalk, clay, one accent) is
+     locked at the start of Phase 3 — see implementation.md §3.3. Nothing here is
+     final; it exists so the static export has a styled surface to render.
+
+     Contrast ratios below are MEASURED against --felt-deep, not eyeballed. Re-measure
+     before changing any of these: a value that looks "bright enough" can sit at 3:1 and
+     fail for body text while passing comfortably for headings. */
+  --felt: #12403a;
+  --felt-deep: #0d2f2b;
+  --chalk: #e8e4da; /* on felt-deep: 11.34:1 — AAA */
+  --clay: #e08a63; /* on felt-deep: 5.47:1 — AA for body text.
+                      (#c4623f was the first pick at 3.54:1 — AA-large only, and it failed
+                      for the body-size tagline. Lightened to clear AA.) */
+  --fade: #9fb3ae; /* on felt-deep: 6.54:1 — AA */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--felt-deep);
+  color: var(--chalk);
+  font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+main {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+}
+
+h1 {
+  font-size: 2.25rem;
+  margin: 0 0 0.25rem;
+  letter-spacing: -0.02em;
+}
+
+.tagline {
+  color: var(--clay);
+  font-size: 1.05rem;
+  margin: 0 0 2rem;
+}
+
+p {
+  line-height: 1.6;
+  color: var(--chalk);
+}
+
+.note {
+  border-left: 2px solid var(--clay);
+  padding: 0.75rem 0 0.75rem 1rem;
+  color: var(--fade);
+  margin: 2rem 0;
+}
+
+nav a {
+  color: var(--chalk);
+  margin-right: 1.25rem;
+  text-decoration: none;
+  border-bottom: 1px solid var(--clay);
+  padding-bottom: 2px;
+}
