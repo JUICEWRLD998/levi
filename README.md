@@ -34,11 +34,22 @@ any house or board card is derivable.
 
 ## Status
 
-**Phase 0 — preflight.** The stack is being brought up and verified; no game code is written
-yet. See `implementation.md` in the campaign folder for the phased plan and its acceptance
-criteria.
+**Phase 0 — preflight complete.** The local stack boots, a real session settles through the
+Verify Network VRF, and the Next.js static export builds and renders. No game code yet.
 
-Nothing in this repository claims a capability that has not been run.
+What Phase 0 verified, with receipts:
+
+| Check | Result |
+|---|---|
+| Local stack boots | chain 31337, simulator `:3300`, example `:3100`, VRF node live |
+| VRF fulfils end to end | a session settled: `phase 3 (SETTLED)`, nonzero randomness, 1.96× on the shipped 98% RTP coinflip |
+| Contract drop-in | a hand-written `ICasinoGameV2` contract compiled, deployed and registered with no restart — including a `contracts/lib/` subdirectory import |
+| Next.js static export | 4 routes prerendered as static content, TypeScript clean |
+| Jam widget | loads and renders the `CHAIN JAM VOL.1` badge on every route |
+| Contrast | every foreground/background pair measured against WCAG — all pass AA for body text |
+
+Nothing in this repository claims a capability that has not been run. See
+[`docs/DESIGN.md`](docs/DESIGN.md) for the design and its invariants.
 
 ---
 
