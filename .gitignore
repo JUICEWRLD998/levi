@@ -1,0 +1,29 @@
+# deps
+node_modules/
+.pnpm-store/
+
+# next
+.next/
+out/
+next-env.d.ts
+
+# build output
+dist/
+build/
+
+# env
+.env
+.env.*
+!.env.example
+
+# os / editor
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+
+# local chain + simulator artifacts
+deployed.json
+cache/
+artifacts/
